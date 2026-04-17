@@ -1,0 +1,6 @@
+[plugins.byllm.model]
+default_model = "claude/claude-sonnet-4-6"
+
+[plugins.byllm.call_params]
+temperature = 0.2
+max_tokens = 4000

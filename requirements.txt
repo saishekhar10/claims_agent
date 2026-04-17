@@ -1,0 +1,3 @@
+jaseci==0.14.0
+PyMuPDF==1.24.8
+anthropic>=0.25.0
