@@ -1,0 +1,274 @@
+{
+  "claim_id": "CLM-005",
+  "status": "NEEDS_REVIEW",
+  "extracted_fields": {
+    "vin": {
+      "value": "1N4AL3AP8JC231504",
+      "confidence": "HIGH",
+      "source": "police_report.png",
+      "reason": ""
+    },
+    "date_of_loss": {
+      "value": "03/22/2026",
+      "confidence": "HIGH",
+      "source": "police_report.png",
+      "reason": "Conflict: settlement_breakdown.pdf shows 03/28/2026 (HIGH confidence) and customer_reply.txt shows March 22nd (LOW confidence). Police report is authoritative; 03/22/2026 is corroborated by both the police report and the customer. Settlement breakdown date appears erroneous and requires correction."
+    },
+    "insurance_payout": {
+      "value": "$31,500.00",
+      "confidence": "HIGH",
+      "source": "settlement_breakdown.pdf",
+      "reason": ""
+    },
+    "loan_balance": {
+      "value": "$35,120.75",
+      "confidence": "HIGH",
+      "source": "settlement_breakdown.pdf",
+      "reason": "Minor conflict: customer_reply.txt self-reports approximately $35,000 (LOW confidence). Official settlement breakdown value of $35,120.75 is authoritative."
+    },
+    "additional_facts": [
+      {
+        "key": "claimant_name",
+        "value": "Elena Vasquez",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "policy_number",
+        "value": "AUT-6678102",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_year",
+        "value": "2023",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_make",
+        "value": "Nissan",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_model",
+        "value": "Altima SV",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "lender_name",
+        "value": "Bank of America Auto",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_value",
+        "value": "$31,500.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "deductible",
+        "value": "$500.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "gap_amount",
+        "value": "$3,620.75",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "claim_reference",
+        "value": "AUT-6678102-TL",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "incident_location",
+        "value": "Plymouth Rd & Middlebelt, Livonia, MI",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "report_number",
+        "value": "LPD-2026-00531",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "officer_name",
+        "value": "Det. Anthony Russo",
+        "confidence": "MEDIUM",
+        "source": "police_report.png",
+        "reason": "Officer name is crossed out in the document, indicating a possible correction or redaction."
+      },
+      {
+        "key": "badge_number",
+        "value": "1147",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "incident_time",
+        "value": "14:32",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_declared",
+        "value": "Yes",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "account_number",
+        "value": "8841-5567-2203",
+        "confidence": "MEDIUM",
+        "source": "customer_reply.txt",
+        "reason": "Self-reported by customer from memory of last statement; not verified against official lender records."
+      },
+      {
+        "key": "monthly_payment",
+        "value": "$487.33",
+        "confidence": "MEDIUM",
+        "source": "customer_reply.txt",
+        "reason": "Self-reported by customer from last statement; not verified against official finance agreement."
+      },
+      {
+        "key": "claimant_phone",
+        "value": "(248) 555-0831",
+        "confidence": "HIGH",
+        "source": "customer_reply.txt",
+        "reason": ""
+      }
+    ]
+  },
+  "documents": {
+    "identified": [
+      {
+        "filename": "customer_reply.txt",
+        "doc_type": "CUSTOMER_EMAIL",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "settlement_breakdown.pdf",
+        "doc_type": "SETTLEMENT_BREAKDOWN",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "police_report.png",
+        "doc_type": "POLICE_REPORT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      }
+    ],
+    "missing": [
+      "finance_agreement"
+    ],
+    "duplicates": []
+  },
+  "issues": [
+    {
+      "type": "MISSING",
+      "description": "Finance agreement is missing",
+      "details": "No finance agreement document was submitted. The customer confirmed she cannot locate her copy (possibly lost in the vehicle at tow). Official loan payoff amount and account details cannot be independently verified. Customer has offered to authorize direct contact with Bank of America Auto."
+    },
+    {
+      "type": "INCONSISTENCY",
+      "description": "Date-of-loss conflict between settlement breakdown and police report",
+      "details": "settlement_breakdown.pdf records the date of loss as 03/28/2026 (HIGH confidence), while police_report.png records 03/22/2026 (HIGH confidence). The customer also corroborates 03/22/2026 in customer_reply.txt. The settlement breakdown date appears to be an error and must be corrected before finalization. Reconciliation recommends 03/22/2026 per police report authority."
+    },
+    {
+      "type": "LOW_CONFIDENCE",
+      "description": "Officer name crossed out on police report",
+      "details": "The reporting officer field on police_report.png shows 'CROSSED OUT: Det. Anthony Russo', suggesting a possible correction or redaction. Badge No. 1147 is still legible. Internal verification of the officer record may be warranted."
+    }
+  ],
+  "next_action": {
+    "type": "MESSAGE_CUSTOMER",
+    "message": "**Subject: Action Required \u2013 Claim CLM-005 (Policy AUT-6678102)**\n\nDear Ms. Vasquez,\n\nThank you for your patience as we work through your claim, CLM-005. We want to ensure everything is handled accurately and as smoothly as possible for you.\n\nTo move your claim forward, we need your help with two items:\n\n**1. Finance Agreement with Bank of America Auto**\nWe need the official loan agreement to confirm your exact payoff amount and account details. Since you mentioned you're unable to locate this document, we're happy to contact Bank of America Auto directly on your behalf. To do so, we'll simply need you to sign a short authorization form, which we can send to you right away.\n\n**2. Date-of-Loss Confirmation**\nOur settlement document currently shows **03/28/2026**, but both the police report and your account indicate the accident occurred on **03/22/2026**. To correct this, we just need a brief written confirmation of the accurate date from you.\n\nPlease reply to this email to confirm the correct date of loss and let us know if you'd like us to send the Bank of America authorization form.\n\nWe truly appreciate your cooperation, Ms. Vasquez. Please don't hesitate to reach out with any questions.\n\nWarm regards,\n**Claims Support Team**"
+  },
+  "tools_used": [
+    {
+      "tool": "classify_document",
+      "input": "customer_reply.txt text",
+      "result": "CUSTOMER_EMAIL"
+    },
+    {
+      "tool": "classify_document",
+      "input": "settlement_breakdown.pdf text",
+      "result": "SETTLEMENT_BREAKDOWN"
+    },
+    {
+      "tool": "classify_document",
+      "input": "police_report.png text",
+      "result": "POLICE_REPORT"
+    },
+    {
+      "tool": "detect_duplicates",
+      "input": "All 3 documents: customer_reply.txt, settlement_breakdown.pdf, police_report.png",
+      "result": "No duplicates detected. All pairs similarity < 15%."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=CUSTOMER_EMAIL, customer_reply.txt",
+      "result": "date_of_loss=March 22nd (LOW), loan_balance=$35,000 (LOW); additional facts: lender, account, monthly payment, claimant name, policy number, phone"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=SETTLEMENT_BREAKDOWN, settlement_breakdown.pdf",
+      "result": "vin=1N4AL3AP8JC231504 (HIGH), date_of_loss=03/28/2026 (HIGH), insurance_payout=$31,500.00 (HIGH), loan_balance=$35,120.75 (HIGH); additional facts: claimant, policy, vehicle, lender, ACV, deductible, gap amount"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=POLICE_REPORT, police_report.png",
+      "result": "vin=1N4AL3AP8JC231504 (HIGH), date_of_loss=03/22/2026 (HIGH); additional facts: location, report number, officer, badge, time, total loss declared"
+    },
+    {
+      "tool": "validate_vin",
+      "input": "1N4AL3AP8JC231504",
+      "result": "VALID"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "VIN from settlement_breakdown.pdf (HIGH) and police_report.png (HIGH)",
+      "result": "Recommended: 1N4AL3AP8JC231504 from police_report.png. No conflict. Consistent across 2 sources."
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "date_of_loss from settlement_breakdown.pdf (03/28/2026, HIGH), police_report.png (03/22/2026, HIGH), customer_reply.txt (March 22nd, LOW)",
+      "result": "CONFLICT detected. Recommended: 03/22/2026 from police_report.png (highest authority). Settlement breakdown date appears erroneous."
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "loan_balance from settlement_breakdown.pdf ($35,120.75, HIGH) and customer_reply.txt ($35,000, LOW)",
+      "result": "Minor conflict. Recommended: $35,120.75 from settlement_breakdown.pdf."
+    },
+    {
+      "tool": "compose_customer_message",
+      "input": "CLM-005: missing finance agreement; date-of-loss discrepancy 03/28 vs 03/22; customer offered to authorize Bank of America contact",
+      "result": "Professional message composed requesting finance agreement authorization and date-of-loss written confirmation."
+    }
+  ]
+}

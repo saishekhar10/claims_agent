@@ -1,0 +1,293 @@
+{
+  "claim_id": "CLM-002",
+  "status": "INCOMPLETE",
+  "extracted_fields": {
+    "vin": {
+      "value": "3FADP4BJ7EM207685",
+      "confidence": "HIGH",
+      "source": "finance_agreement.pdf",
+      "reason": ""
+    },
+    "date_of_loss": {
+      "value": "01/28/2026",
+      "confidence": "HIGH",
+      "source": "settlement_breakdown.png",
+      "reason": ""
+    },
+    "insurance_payout": {
+      "value": "$12,400.00",
+      "confidence": "HIGH",
+      "source": "settlement_breakdown.png",
+      "reason": ""
+    },
+    "loan_balance": {
+      "value": "$15,890.20",
+      "confidence": "HIGH",
+      "source": "finance_agreement.pdf",
+      "reason": ""
+    },
+    "additional_facts": [
+      {
+        "key": "claimant_name",
+        "value": "James Kowalski",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "policy_number",
+        "value": "AUT-5513827",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "claim_reference",
+        "value": "AUT-5513827-TL",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "account_number",
+        "value": "7720-3341-5589",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "lender_name",
+        "value": "Ally Financial",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_year",
+        "value": "2019",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_make",
+        "value": "Ford",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_model",
+        "value": "Focus SE",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_value",
+        "value": "$12,400.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "deductible",
+        "value": "$500.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "gap_amount",
+        "value": "$3,490.20",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "original_loan_amount",
+        "value": "$15,890.20",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "interest_rate",
+        "value": "4.99%",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "loan_term",
+        "value": "60 months",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "monthly_payment",
+        "value": "$432.18",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "payment_status",
+        "value": "Current",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "incident_location",
+        "value": "Michigan Ave and Livernois",
+        "confidence": "MEDIUM",
+        "source": "customer_reply.txt",
+        "reason": "Self-reported by customer in email; not verified against official police report"
+      },
+      {
+        "key": "officer_name",
+        "value": "Maria Santos (badge #2281)",
+        "confidence": "LOW",
+        "source": "customer_reply.txt",
+        "reason": "Self-reported by customer in email; not verified against official police report"
+      },
+      {
+        "key": "police_department",
+        "value": "DPD",
+        "confidence": "LOW",
+        "source": "customer_reply.txt",
+        "reason": "Self-reported by customer; not verified against official records"
+      },
+      {
+        "key": "gap_insurance",
+        "value": "Yes, through dealer",
+        "confidence": "LOW",
+        "source": "customer_reply.txt",
+        "reason": "Self-reported by customer; no documentation provided"
+      },
+      {
+        "key": "claimant_phone",
+        "value": "(313) 555-0294",
+        "confidence": "MEDIUM",
+        "source": "customer_reply.txt",
+        "reason": "Provided by customer in email signature; not independently verified"
+      }
+    ]
+  },
+  "documents": {
+    "identified": [
+      {
+        "filename": "customer_reply.txt",
+        "doc_type": "CUSTOMER_EMAIL",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "finance_agreement.pdf",
+        "doc_type": "FINANCE_AGREEMENT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "settlement_breakdown.png",
+        "doc_type": "SETTLEMENT_BREAKDOWN",
+        "is_duplicate": false,
+        "duplicate_of": null
+      }
+    ],
+    "missing": [
+      "police_report"
+    ],
+    "duplicates": []
+  },
+  "issues": [
+    {
+      "type": "MISSING",
+      "description": "Missing required document: Police Report",
+      "details": "No official police report has been submitted. Customer states it is available and will be retrieved next weekend. Officer Maria Santos (badge #2281), DPD, self-reported by customer."
+    },
+    {
+      "type": "INCONSISTENCY",
+      "description": "Date of loss format conflict across documents",
+      "details": "customer_reply.txt states 'January 28th' (no year, MEDIUM confidence); settlement_breakdown.png states '01/28/2026' (HIGH confidence). Values represent the same date but differ in format and specificity. Resolved to '01/28/2026' from settlement_breakdown.png."
+    },
+    {
+      "type": "LOW_CONFIDENCE",
+      "description": "Several additional facts are LOW confidence due to self-reporting",
+      "details": "officer_name, police_department, and gap_insurance are self-reported by the customer in an email and cannot be verified without the official police report or GAP insurance documentation."
+    },
+    {
+      "type": "LOW_CONFIDENCE",
+      "description": "Settlement breakdown note indicates payout is not yet final",
+      "details": "The settlement_breakdown.png contains the disclaimer: 'This settlement is subject to final review and may be adjusted.' The Net Insurance Payout of $12,400.00 may change."
+    }
+  ],
+  "next_action": {
+    "type": "MESSAGE_CUSTOMER",
+    "message": "**Subject: Action Required \u2013 Claim CLM-002 (Ref: AUT-5513827)**\n\nDear James,\n\nThank you for submitting your claim and for providing the finance agreement and settlement breakdown \u2014 we appreciate your effort in getting those to us promptly.\n\nWe're writing regarding your total loss claim, **CLM-002 (Ref: AUT-5513827)**. To move forward, we still need one outstanding document:\n\n- **Official Police Report** \u2013 This is required to verify the accident details, confirm the date of loss (January 28, 2026), and complete your claim file. Without it, we're unable to finalize the review process.\n\nWe understand you mentioned the report is currently at your parents' home in Toledo and that you plan to retrieve it next weekend. We completely understand that life can make these things tricky, and we appreciate you keeping us informed.\n\nWhen you're able to, please submit the report at your earliest convenience using either of the options below:\n\n- \ud83d\udcce **Upload directly** to your claims portal\n- \ud83d\udce7 **Reply to this email** with the report attached\n\nIf you have any questions or need assistance in the meantime, please don't hesitate to reach out. We're here to help.\n\nWarm regards,\n**Claims Support Team**"
+  },
+  "tools_used": [
+    {
+      "tool": "classify_document",
+      "input": "customer_reply.txt text",
+      "result": "CUSTOMER_EMAIL"
+    },
+    {
+      "tool": "classify_document",
+      "input": "finance_agreement.pdf text",
+      "result": "FINANCE_AGREEMENT"
+    },
+    {
+      "tool": "classify_document",
+      "input": "settlement_breakdown.png text",
+      "result": "SETTLEMENT_BREAKDOWN"
+    },
+    {
+      "tool": "detect_duplicates",
+      "input": "All 3 documents: customer_reply.txt, finance_agreement.pdf, settlement_breakdown.png",
+      "result": "No duplicates detected. All pairs similarity < 15%."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=CUSTOMER_EMAIL, customer_reply.txt",
+      "result": "vin=3FADP4BJ7EM207685 (MEDIUM), date_of_loss='January 28th' (MEDIUM), insurance_payout=None, loan_balance=None. Additional facts: claimant_name, claim_number, car details, incident_location, officer_name, gap_insurance, claimant_phone."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=FINANCE_AGREEMENT, finance_agreement.pdf",
+      "result": "vin=3FADP4BJ7EM207685 (HIGH), loan_balance=$15,890.20 (HIGH). Additional facts: account_number, lender_name, car details, loan terms."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=SETTLEMENT_BREAKDOWN, settlement_breakdown.png",
+      "result": "vin=3FADP4BJ7EM207685 (HIGH), date_of_loss=01/28/2026 (HIGH), insurance_payout=$12,400.00 (HIGH), loan_balance=$15,890.20 (HIGH). Additional facts: policy_number, deductible, gap_amount, total_loss_value."
+    },
+    {
+      "tool": "validate_vin",
+      "input": "3FADP4BJ7EM207685",
+      "result": "VALID"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "VIN across 3 sources",
+      "result": "recommended=3FADP4BJ7EM207685, source=finance_agreement.pdf, confidence=HIGH, has_conflict=false"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "date_of_loss across 2 sources",
+      "result": "recommended=01/28/2026, source=settlement_breakdown.png, confidence=HIGH, has_conflict=true (format difference with customer_reply.txt 'January 28th')"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "loan_balance across 2 sources",
+      "result": "recommended=$15,890.20, source=finance_agreement.pdf, confidence=HIGH, has_conflict=false"
+    },
+    {
+      "tool": "compose_customer_message",
+      "input": "Claim CLM-002, missing police report, customer James Kowalski, can retrieve next weekend",
+      "result": "Professional customer message composed requesting police report submission via portal or email reply."
+    }
+  ]
+}

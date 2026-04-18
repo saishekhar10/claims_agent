@@ -8,5 +8,4 @@ venv/
 .jac/cache/
 .jac/data/
 data/
-outputs/*.json
 ai_usage/

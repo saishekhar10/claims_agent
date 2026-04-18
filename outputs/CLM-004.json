@@ -1,0 +1,351 @@
+{
+  "claim_id": "CLM-004",
+  "status": "NEEDS_REVIEW",
+  "extracted_fields": {
+    "vin": {
+      "value": "5YJ3E1EA7K",
+      "confidence": "MEDIUM",
+      "source": "police_report.png",
+      "reason": "VIN is explicitly labeled across all 4 documents and consistent, but is only 10 characters \u2014 fails 17-character VIN validation. Captured exactly as written."
+    },
+    "date_of_loss": {
+      "value": "12/19/2025",
+      "confidence": "HIGH",
+      "source": "police_report.png",
+      "reason": ""
+    },
+    "insurance_payout": {
+      "value": "TBD - pending",
+      "confidence": "LOW",
+      "source": "settlement_breakdown.png",
+      "reason": "Net Insurance Payout is explicitly labeled in the settlement breakdown but the value is 'TBD - pending' \u2014 no finalized numeric payout amount is available. ACV has not yet been determined."
+    },
+    "loan_balance": {
+      "value": "$19,200.00",
+      "confidence": "HIGH",
+      "source": "finance_agreement.png",
+      "reason": ""
+    },
+    "additional_facts": [
+      {
+        "key": "car_year",
+        "value": "2022",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "car_make",
+        "value": "Tesla",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "car_model",
+        "value": "Model 3",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "incident_location",
+        "value": "Ecorse Rd & I-94, Ypsilanti, MI",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "claimant_name",
+        "value": "Marcus Thompson",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "policy_number",
+        "value": "AUT-3347821",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "report_number",
+        "value": "YPD-2025-02871",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "officer_name",
+        "value": "Ofc. Rachel Kim",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "badge_number",
+        "value": "5502",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "incident_time",
+        "value": "14:32",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_declared",
+        "value": "Yes \u2014 declared total loss by responding tow company",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "lender_name",
+        "value": "Wells Fargo Auto",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "account_number",
+        "value": "3310-9982-4450",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "original_loan_amount",
+        "value": "$19,200.00",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "interest_rate_apr",
+        "value": "4.99%",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "loan_term",
+        "value": "60 months",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "monthly_payment",
+        "value": "$432.18",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "payment_status",
+        "value": "Current",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "deductible",
+        "value": "$500.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "claim_reference",
+        "value": "AUT-3347821-TL",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_value",
+        "value": "TBD - pending",
+        "confidence": "MEDIUM",
+        "source": "settlement_breakdown.png",
+        "reason": "ACV is explicitly labeled but listed as 'TBD - pending' \u2014 no numeric amount available yet."
+      },
+      {
+        "key": "gap_amount",
+        "value": "N/A",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.png",
+        "reason": ""
+      },
+      {
+        "key": "tow_receipt_number",
+        "value": "TOW-31160",
+        "confidence": "HIGH",
+        "source": "tow_receipt.png",
+        "reason": ""
+      },
+      {
+        "key": "tow_fee",
+        "value": "$185.00",
+        "confidence": "HIGH",
+        "source": "tow_receipt.png",
+        "reason": ""
+      },
+      {
+        "key": "storage_fee_per_day",
+        "value": "$45.00",
+        "confidence": "HIGH",
+        "source": "tow_receipt.png",
+        "reason": ""
+      },
+      {
+        "key": "admin_dispatch_fee",
+        "value": "$25.00",
+        "confidence": "HIGH",
+        "source": "tow_receipt.png",
+        "reason": ""
+      },
+      {
+        "key": "total_tow_bill",
+        "value": "$255.00",
+        "confidence": "HIGH",
+        "source": "tow_receipt.png",
+        "reason": ""
+      },
+      {
+        "key": "delivered_to",
+        "value": "A-1 Storage Yard, Lot B-14",
+        "confidence": "HIGH",
+        "source": "tow_receipt.png",
+        "reason": ""
+      }
+    ]
+  },
+  "documents": {
+    "identified": [
+      {
+        "filename": "police_report.png",
+        "doc_type": "POLICE_REPORT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "tow_receipt.png",
+        "doc_type": "TOW_RECEIPT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "settlement_breakdown.png",
+        "doc_type": "SETTLEMENT_BREAKDOWN",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "finance_agreement.png",
+        "doc_type": "FINANCE_AGREEMENT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      }
+    ],
+    "missing": [],
+    "duplicates": []
+  },
+  "issues": [
+    {
+      "type": "INVALID",
+      "description": "VIN '5YJ3E1EA7K' is invalid \u2014 only 10 characters, must be exactly 17.",
+      "details": "The VIN '5YJ3E1EA7K' appears consistently across all four documents (police_report.png, tow_receipt.png, settlement_breakdown.png, finance_agreement.png) but fails VIN validation: must be exactly 17 characters, got 10. The customer must provide the correct full 17-character VIN for the 2022 Tesla Model 3."
+    },
+    {
+      "type": "MISSING",
+      "description": "Insurance payout amount is not yet finalized.",
+      "details": "The settlement_breakdown.png lists Net Insurance Payout and Actual Cash Value (ACV) as 'TBD - pending'. No numeric settlement figure is available. A finalized settlement statement is required to complete the claim."
+    },
+    {
+      "type": "LOW_CONFIDENCE",
+      "description": "Insurance payout field has LOW confidence due to pending/unknown value.",
+      "details": "The insurance_payout field extracted from settlement_breakdown.png is 'TBD - pending' \u2014 this is not a usable monetary value and cannot be used for claim resolution until the ACV is determined and a final settlement figure is issued."
+    }
+  ],
+  "next_action": {
+    "type": "MESSAGE_CUSTOMER",
+    "message": "**Subject: Action Required \u2013 Claim CLM-004 | Marcus Thompson**\n\nDear Marcus,\n\nThank you for submitting your claim. We're currently reviewing **Claim CLM-004** and want to ensure everything moves forward as smoothly as possible. We've identified two items that need your attention before we can proceed.\n\n**1. Vehicle Identification Number (VIN)**\nThe VIN listed across your submitted documents \u2014 *5YJ3E1EA7K* \u2014 appears to be incomplete. A valid VIN must be exactly 17 characters. To correctly identify your 2022 Tesla Model 3 in our system, please provide the full, correct 17-character VIN. You can typically find this on your vehicle registration, insurance card, or on the dashboard near the windshield.\n\n**2. Settlement Amount Pending**\nYour settlement breakdown currently shows the Net Insurance Payout and Actual Cash Value as *\"TBD \u2013 pending.\"* The final settlement figure is still being determined. Once your insurer confirms the Actual Cash Value, a finalized settlement statement will be needed to complete your claim.\n\nPlease reply to this email or upload the updated documents through our secure customer portal at your earliest convenience. Our team is here to help \u2014 don't hesitate to reach out with any questions.\n\nWarm regards,\n**Claims Support Team**"
+  },
+  "tools_used": [
+    {
+      "tool": "classify_document",
+      "input": "police_report.png text",
+      "result": "POLICE_REPORT"
+    },
+    {
+      "tool": "classify_document",
+      "input": "tow_receipt.png text",
+      "result": "TOW_RECEIPT"
+    },
+    {
+      "tool": "classify_document",
+      "input": "settlement_breakdown.png text",
+      "result": "SETTLEMENT_BREAKDOWN"
+    },
+    {
+      "tool": "classify_document",
+      "input": "finance_agreement.png text",
+      "result": "FINANCE_AGREEMENT"
+    },
+    {
+      "tool": "detect_duplicates",
+      "input": "All 4 documents: police_report.png, tow_receipt.png, settlement_breakdown.png, finance_agreement.png",
+      "result": "No duplicates detected. All pairs below 85% similarity threshold."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=POLICE_REPORT, police_report.png",
+      "result": "vin=5YJ3E1EA7K (MEDIUM), date_of_loss=12/19/2025 (HIGH), insurance_payout=None, loan_balance=None. Additional facts: car_year, car_make, car_model, incident_location, claimant_name, policy_number, report_number, officer_name, badge_number, incident_time, total_loss_declared."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=TOW_RECEIPT, tow_receipt.png",
+      "result": "vin=5YJ3E1EA7K (MEDIUM), date_of_loss=12/19/2025 (MEDIUM), insurance_payout=None, loan_balance=None. Additional facts: tow_receipt_number, tow_fee, storage_fee_per_day, admin_dispatch_fee, total_tow_bill, delivered_to, etc."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=SETTLEMENT_BREAKDOWN, settlement_breakdown.png",
+      "result": "vin=5YJ3E1EA7K (MEDIUM), date_of_loss=12/19/2025 (HIGH), insurance_payout='TBD - pending' (MEDIUM), loan_balance=$19,200.00 (HIGH). Additional facts: claimant_name, policy_number, lender_name, deductible, claim_reference, total_loss_value, gap_amount."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "doc_type=FINANCE_AGREEMENT, finance_agreement.png",
+      "result": "vin=5YJ3E1EA7K (MEDIUM), date_of_loss=None, insurance_payout=None, loan_balance=$19,200.00 (HIGH). Additional facts: account_number, original_loan_amount, interest_rate_apr, loan_term, monthly_payment, payment_status, lender_name."
+    },
+    {
+      "tool": "validate_vin",
+      "input": "5YJ3E1EA7K",
+      "result": "INVALID: must be exactly 17 characters, got 10"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "VIN across 4 sources: police_report.png, tow_receipt.png, settlement_breakdown.png, finance_agreement.png \u2014 all MEDIUM confidence",
+      "result": "recommended_value=5YJ3E1EA7K, chosen_source=police_report.png, confidence=MEDIUM, has_conflict=false. Consistent across all 4 sources."
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "date_of_loss across 3 sources: police_report.png (HIGH), tow_receipt.png (MEDIUM), settlement_breakdown.png (HIGH)",
+      "result": "recommended_value=12/19/2025, chosen_source=police_report.png, confidence=HIGH, has_conflict=false. Consistent across all 3 sources."
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "loan_balance across 2 sources: settlement_breakdown.png (HIGH), finance_agreement.png (HIGH)",
+      "result": "recommended_value=$19,200.00, chosen_source=finance_agreement.png, confidence=HIGH, has_conflict=false. Consistent across both sources."
+    },
+    {
+      "tool": "compose_customer_message",
+      "input": "Claim CLM-004 \u2014 Marcus Thompson. Issues: (1) VIN 5YJ3E1EA7K is only 10 chars, needs correct 17-char VIN. (2) Net Insurance Payout is TBD-pending, finalized settlement statement needed.",
+      "result": "Composed professional customer message requesting corrected VIN and finalized settlement statement."
+    }
+  ]
+}

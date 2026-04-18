@@ -47,10 +47,12 @@ Required fields:
 
 Set field to None if not found in this document — do not guess.
 
-For additional_facts, capture any other useful information as key-value pairs:
-  Examples: car_make, car_model, car_year, incident_location, weather_conditions, officer_name, report_number,
-  lender_name, account_number, adjuster_name, claimant_name, policy_number, total_loss_value, deductible.
-  Use snake_case keys. Values are FieldResult objects — confidence reflects the same two-factor logic above.""";
+For additional_facts, return a list of AdditionalFact objects (flat structure — no nested objects).
+  Each AdditionalFact has: key (snake_case name), value (string), confidence (HIGH/MEDIUM/LOW), source (filename), reason.
+  Example: [{"key": "car_make", "value": "Honda", "confidence": "HIGH", "source": "police_report.pdf", "reason": ""},
+            {"key": "car_year", "value": "2020", "confidence": "HIGH", "source": "police_report.pdf", "reason": ""}]
+  Common keys: car_make, car_model, car_year, incident_location, weather_conditions, officer_name, report_number,
+  lender_name, account_number, adjuster_name, claimant_name, policy_number, total_loss_value, deductible.""";
 
 def extract_fields(doc_type: DocType, text: str) -> ExtractedFields by llm();
 

@@ -59,15 +59,29 @@ sem FieldResult.confidence = "Reliability of this extraction — HIGH for labele
 sem FieldResult.source = "Filename of the document this value was extracted from (e.g. 'police_report.pdf'). Empty string if not applicable.";
 sem FieldResult.reason = "Required when confidence is MEDIUM or LOW — brief explanation of why confidence is reduced. Empty string when confidence is HIGH.";
 
+obj AdditionalFact {
+    has key: str = "";
+    has value: str = "";
+    has confidence: Confidence = Confidence.LOW;
+    has source: str = "";
+    has reason: str = "";
+}
+
+sem AdditionalFact.key = "Snake_case name for this fact (e.g. 'car_make', 'car_year', 'officer_name', 'incident_location').";
+sem AdditionalFact.value = "The extracted fact value as a string.";
+sem AdditionalFact.confidence = "Reliability of this extraction.";
+sem AdditionalFact.source = "Filename this fact was extracted from.";
+sem AdditionalFact.reason = "Why confidence is MEDIUM or LOW. Empty string when HIGH.";
+
 obj ExtractedFields {
     has vin: FieldResult | None = None;
     has date_of_loss: FieldResult | None = None;
     has insurance_payout: FieldResult | None = None;
     has loan_balance: FieldResult | None = None;
-    has additional_facts: dict[str, FieldResult] = {};
+    has additional_facts: list[AdditionalFact] = [];
 }
 
-sem ExtractedFields.additional_facts = "Open-ended fact storage for any relevant claim information discovered during processing. Keys are fact names (e.g., 'car_make', 'incident_location', 'weather'), values are FieldResult objects with confidence and source tracking. Allows the agent to capture variable information across different claim types without schema changes.";
+sem ExtractedFields.additional_facts = "List of additional facts found in this document. Each element is an AdditionalFact with key (fact name) and value/confidence/source/reason fields. Examples of keys: car_make, car_model, car_year, incident_location, weather_conditions, officer_name, report_number, lender_name, account_number, adjuster_name, claimant_name, policy_number, total_loss_value, deductible.";
 sem ExtractedFields.vin = "Vehicle Identification Number — must be exactly 17 alphanumeric characters. Flag INVALID if length or format is wrong.";
 sem ExtractedFields.date_of_loss = "Date the vehicle loss occurred — must be a valid calendar date. Cross-check between police report and other documents.";
 sem ExtractedFields.insurance_payout = "Total insurance settlement payout amount — must be numeric. Found in settlement breakdown document.";

@@ -1,0 +1,300 @@
+{
+  "claim_id": "CLM-001",
+  "status": "COMPLETE",
+  "extracted_fields": {
+    "vin": {
+      "value": "1HGCM82633A004352",
+      "confidence": "HIGH",
+      "source": "police_report.pdf",
+      "reason": ""
+    },
+    "date_of_loss": {
+      "value": "02/14/2026",
+      "confidence": "HIGH",
+      "source": "police_report.pdf",
+      "reason": ""
+    },
+    "insurance_payout": {
+      "value": "$18,750.00",
+      "confidence": "HIGH",
+      "source": "settlement_breakdown.pdf",
+      "reason": ""
+    },
+    "loan_balance": {
+      "value": "$22,340.55",
+      "confidence": "HIGH",
+      "source": "finance_agreement.png",
+      "reason": ""
+    },
+    "additional_facts": [
+      {
+        "key": "car_year",
+        "value": "2020",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_make",
+        "value": "Honda",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "car_model",
+        "value": "Accord EX-L",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "incident_location",
+        "value": "Washtenaw Ave & Huron Pkwy, Ann Arbor, MI",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "claimant_name",
+        "value": "Sarah Mitchell",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "policy_number",
+        "value": "AUT-7829301",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "report_number",
+        "value": "AA-2026-00437",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "officer_name",
+        "value": "Ofc. Daniel Reeves",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "badge_number",
+        "value": "4417",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_declared",
+        "value": "Yes",
+        "confidence": "HIGH",
+        "source": "police_report.pdf",
+        "reason": ""
+      },
+      {
+        "key": "lender_name",
+        "value": "Capital One Auto Finance",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_value",
+        "value": "$18,750.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "deductible",
+        "value": "$500.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "gap_amount",
+        "value": "$3,590.55",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "claim_reference",
+        "value": "AUT-7829301-TL",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown.pdf",
+        "reason": ""
+      },
+      {
+        "key": "adjuster_name",
+        "value": "M. Chen",
+        "confidence": "HIGH",
+        "source": "adjuster_note.png",
+        "reason": ""
+      },
+      {
+        "key": "odometer_reading",
+        "value": "~47,200 mi",
+        "confidence": "LOW",
+        "source": "adjuster_note.png",
+        "reason": "Approximate reading; odometer display was cracked and hard to read exactly."
+      },
+      {
+        "key": "account_number",
+        "value": "4501-8827-3390",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "interest_rate_apr",
+        "value": "4.99%",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "loan_term",
+        "value": "60 months",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "monthly_payment",
+        "value": "$432.18",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "payment_status",
+        "value": "Current",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      },
+      {
+        "key": "original_loan_amount",
+        "value": "$22,340.55",
+        "confidence": "HIGH",
+        "source": "finance_agreement.png",
+        "reason": ""
+      }
+    ]
+  },
+  "documents": {
+    "identified": [
+      {
+        "filename": "police_report.pdf",
+        "doc_type": "POLICE_REPORT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "settlement_breakdown.pdf",
+        "doc_type": "SETTLEMENT_BREAKDOWN",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "adjuster_note.png",
+        "doc_type": "ADJUSTER_NOTE",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "finance_agreement.png",
+        "doc_type": "FINANCE_AGREEMENT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      }
+    ],
+    "missing": [],
+    "duplicates": []
+  },
+  "issues": [],
+  "next_action": {
+    "type": "FINALIZE",
+    "message": null
+  },
+  "tools_used": [
+    {
+      "tool": "classify_document",
+      "input": "police_report.pdf text",
+      "result": "POLICE_REPORT"
+    },
+    {
+      "tool": "classify_document",
+      "input": "settlement_breakdown.pdf text",
+      "result": "SETTLEMENT_BREAKDOWN"
+    },
+    {
+      "tool": "classify_document",
+      "input": "adjuster_note.png text",
+      "result": "ADJUSTER_NOTE"
+    },
+    {
+      "tool": "classify_document",
+      "input": "finance_agreement.png text",
+      "result": "FINANCE_AGREEMENT"
+    },
+    {
+      "tool": "detect_duplicates",
+      "input": "All 4 documents",
+      "result": "No duplicates detected across all 6 pairs (max similarity 13.5%)"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "police_report.pdf (doc_type=1)",
+      "result": "VIN=1HGCM82633A004352 (HIGH), date_of_loss=02/14/2026 (HIGH), plus 10 additional facts"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "settlement_breakdown.pdf (doc_type=3)",
+      "result": "VIN=1HGCM82633A004352 (HIGH), date_of_loss=02/14/2026 (HIGH), insurance_payout=$18,750.00 (HIGH), loan_balance=$22,340.55 (HIGH), plus 10 additional facts"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "adjuster_note.png (doc_type=4)",
+      "result": "VIN=1HGCM82633A004352 (MEDIUM), loan_balance=about $22k (LOW), plus 10 additional facts"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "finance_agreement.png (doc_type=2)",
+      "result": "VIN=1HGCM82633A004352 (HIGH), loan_balance=$22,340.55 (HIGH), plus 11 additional facts"
+    },
+    {
+      "tool": "validate_vin",
+      "input": "1HGCM82633A004352",
+      "result": "VALID"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "VIN across 4 sources",
+      "result": "recommended=1HGCM82633A004352, source=police_report.pdf, confidence=HIGH, has_conflict=false"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "date_of_loss across 2 sources",
+      "result": "recommended=02/14/2026, source=police_report.pdf, confidence=HIGH, has_conflict=false"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "insurance_payout (single source)",
+      "result": "recommended=$18,750.00, source=settlement_breakdown.pdf, confidence=HIGH, has_conflict=false"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "loan_balance across 2 authoritative sources",
+      "result": "recommended=$22,340.55, source=finance_agreement.png, confidence=HIGH, has_conflict=false"
+    }
+  ]
+}

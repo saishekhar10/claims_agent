@@ -1,0 +1,285 @@
+{
+  "claim_id": "CLM-003",
+  "status": "NEEDS_REVIEW",
+  "extracted_fields": {
+    "vin": {
+      "value": "2T1BURHE5JC034127",
+      "confidence": "HIGH",
+      "source": "police_report.png",
+      "reason": ""
+    },
+    "date_of_loss": {
+      "value": "03/05/2026",
+      "confidence": "HIGH",
+      "source": "police_report.png",
+      "reason": ""
+    },
+    "insurance_payout": {
+      "value": "$23,800.00",
+      "confidence": "HIGH",
+      "source": "settlement_breakdown_v2.pdf",
+      "reason": ""
+    },
+    "loan_balance": {
+      "value": "$27,650.00",
+      "confidence": "HIGH",
+      "source": "finance_agreement.pdf",
+      "reason": ""
+    },
+    "additional_facts": [
+      {
+        "key": "claimant_name",
+        "value": "Priya Raghavan",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "policy_number",
+        "value": "AUT-9910234",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "car_year",
+        "value": "2021",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "car_make",
+        "value": "Toyota",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "car_model",
+        "value": "Corolla LE",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "incident_location",
+        "value": "Ford Rd & Outer Dr, Dearborn, MI",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "report_number",
+        "value": "DPB-2026-00298",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "officer_name",
+        "value": "Sgt. Kevin O'Brien",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "incident_time",
+        "value": "14:32",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_declared",
+        "value": "Yes",
+        "confidence": "HIGH",
+        "source": "police_report.png",
+        "reason": ""
+      },
+      {
+        "key": "lender_name",
+        "value": "Chase Auto",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "account_number",
+        "value": "6633-2210-7781",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "interest_rate",
+        "value": "4.99%",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "loan_term",
+        "value": "60 months",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "monthly_payment",
+        "value": "$432.18",
+        "confidence": "HIGH",
+        "source": "finance_agreement.pdf",
+        "reason": ""
+      },
+      {
+        "key": "deductible",
+        "value": "$500.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown_v2.pdf",
+        "reason": ""
+      },
+      {
+        "key": "total_loss_value",
+        "value": "$23,800.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown_v2.pdf",
+        "reason": ""
+      },
+      {
+        "key": "gap_amount",
+        "value": "$3,850.00",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown_v2.pdf",
+        "reason": ""
+      },
+      {
+        "key": "claim_reference",
+        "value": "AUT-9910234-TL",
+        "confidence": "HIGH",
+        "source": "settlement_breakdown_v2.pdf",
+        "reason": ""
+      }
+    ]
+  },
+  "documents": {
+    "identified": [
+      {
+        "filename": "settlement_breakdown_v2.pdf",
+        "doc_type": "SETTLEMENT_BREAKDOWN",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "settlement_breakdown.pdf",
+        "doc_type": "SETTLEMENT_BREAKDOWN",
+        "is_duplicate": true,
+        "duplicate_of": "settlement_breakdown_v2.pdf"
+      },
+      {
+        "filename": "finance_agreement.pdf",
+        "doc_type": "FINANCE_AGREEMENT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      },
+      {
+        "filename": "police_report.png",
+        "doc_type": "POLICE_REPORT",
+        "is_duplicate": false,
+        "duplicate_of": null
+      }
+    ],
+    "missing": [],
+    "duplicates": [
+      "settlement_breakdown.pdf is a duplicate of settlement_breakdown_v2.pdf (similarity: 91.6%) \u2014 superseded by revised version"
+    ]
+  },
+  "issues": [
+    {
+      "type": "INCONSISTENCY",
+      "description": "VIN conflict across documents",
+      "details": "police_report.png and settlement_breakdown_v2.pdf report VIN 2T1BURHE5JC034127, while finance_agreement.pdf reports VIN 2T1BURHE5JC034182. Both VINs are structurally valid. The last 3 digits differ (127 vs 182). Customer verification required via vehicle registration, title, or dashboard VIN plate photo."
+    },
+    {
+      "type": "INCONSISTENCY",
+      "description": "Duplicate settlement breakdown documents",
+      "details": "settlement_breakdown.pdf (original, ACV $24,100.00) has been superseded by settlement_breakdown_v2.pdf (revised, ACV $23,800.00). The revised document includes a REVISION NOTICE noting a secondary appraisal reduced the ACV by $300.00. The original should be disregarded."
+    }
+  ],
+  "next_action": {
+    "type": "MESSAGE_CUSTOMER",
+    "message": "**Subject: Action Required \u2013 VIN Verification Needed for Claim CLM-003**\n\nDear Priya,\n\nThank you for your patience as we work to process your claim (CLM-003). We want to make sure everything is resolved as smoothly as possible for you.\n\nWhile reviewing your claim documents, we noticed a small discrepancy that we need your help to resolve. The VIN listed on your police report and settlement breakdown differs slightly from the VIN shown on your Chase Auto finance agreement. Because both are valid vehicle identification numbers, we're unable to determine which is correct without your confirmation.\n\n**What we need from you:**\nPlease verify the correct VIN for your vehicle and provide a copy of **one** of the following documents:\n\n- Your **vehicle registration**\n- Your **vehicle title**\n- A **photo of the VIN plate** on your dashboard (visible through the driver's side windshield)\n\nThis step ensures that the right vehicle is accurately linked to both your loan and your insurance settlement.\n\nTo keep things moving, please reply to this email with the supporting document, or upload it directly through our claims portal.\n\nIf you have any questions, we're happy to help. Thank you, Priya \u2014 we truly appreciate your cooperation.\n\nWarm regards,\nClaims Support Team"
+  },
+  "tools_used": [
+    {
+      "tool": "classify_document",
+      "input": "settlement_breakdown_v2.pdf text",
+      "result": "SETTLEMENT_BREAKDOWN"
+    },
+    {
+      "tool": "classify_document",
+      "input": "settlement_breakdown.pdf text",
+      "result": "SETTLEMENT_BREAKDOWN"
+    },
+    {
+      "tool": "classify_document",
+      "input": "finance_agreement.pdf text",
+      "result": "FINANCE_AGREEMENT"
+    },
+    {
+      "tool": "classify_document",
+      "input": "police_report.png text",
+      "result": "POLICE_REPORT"
+    },
+    {
+      "tool": "detect_duplicates",
+      "input": "All 4 documents: settlement_breakdown_v2.pdf, settlement_breakdown.pdf, finance_agreement.pdf, police_report.png",
+      "result": "settlement_breakdown_v2.pdf and settlement_breakdown.pdf flagged as duplicates (91.6% similarity). No other duplicates."
+    },
+    {
+      "tool": "extract_fields",
+      "input": "settlement_breakdown_v2.pdf (doc_type=SETTLEMENT_BREAKDOWN)",
+      "result": "VIN: 2T1BURHE5JC034127, date_of_loss: 03/05/2026, insurance_payout: $23,800.00, loan_balance: $27,650.00"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "finance_agreement.pdf (doc_type=FINANCE_AGREEMENT)",
+      "result": "VIN: 2T1BURHE5JC034182, loan_balance: $27,650.00; no date_of_loss or insurance_payout"
+    },
+    {
+      "tool": "extract_fields",
+      "input": "police_report.png (doc_type=POLICE_REPORT)",
+      "result": "VIN: 2T1BURHE5JC034127, date_of_loss: 03/05/2026; no insurance_payout or loan_balance"
+    },
+    {
+      "tool": "validate_vin",
+      "input": "2T1BURHE5JC034127",
+      "result": "VALID"
+    },
+    {
+      "tool": "validate_vin",
+      "input": "2T1BURHE5JC034182",
+      "result": "VALID"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "VIN across police_report.png, settlement_breakdown_v2.pdf, finance_agreement.pdf",
+      "result": "CONFLICT \u2014 recommended 2T1BURHE5JC034127 (police_report.png authority), conflict with 2T1BURHE5JC034182 (finance_agreement.pdf)"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "date_of_loss across police_report.png, settlement_breakdown_v2.pdf",
+      "result": "No conflict \u2014 03/05/2026 consistent across both sources"
+    },
+    {
+      "tool": "reconcile_field",
+      "input": "loan_balance across finance_agreement.pdf, settlement_breakdown_v2.pdf",
+      "result": "No conflict \u2014 $27,650.00 consistent across both sources"
+    },
+    {
+      "tool": "compose_customer_message",
+      "input": "CLM-003 VIN discrepancy: 2T1BURHE5JC034127 vs 2T1BURHE5JC034182 between police/settlement and finance agreement",
+      "result": "Professional customer message composed requesting VIN verification via registration, title, or dashboard VIN plate photo"
+    }
+  ]
+}
