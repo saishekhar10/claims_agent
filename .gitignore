@@ -4,5 +4,9 @@ __pycache__/
 venv/
 .env
 .DS_Store
-*.json
+.jac/
+.jac/cache/
+.jac/data/
+data/
+outputs/*.json
 ai_usage/
