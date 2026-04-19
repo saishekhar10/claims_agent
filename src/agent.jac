@@ -55,12 +55,20 @@ def process_claim(claim_id: str, document_contents: str) -> ClaimResult by llm(
 
 sem prioritize_claims = """Sort a list of processed insurance claims by processing priority.
 Input: JSON array of serialized ClaimResult objects.
-Return JSON: {"processing_order": ["CLM-003", "CLM-001", ...], "rationale": "brief explanation"}.
+Return JSON with exactly this structure:
+{
+  "processing_order": [
+    {"claim_id": "CLM-001", "reason": "All documents present and valid — ready to finalize"},
+    {"claim_id": "CLM-002", "reason": "Missing police report — awaiting customer submission"}
+  ]
+}
+Each entry must have claim_id (string) and reason (one concise sentence explaining why this claim
+is ranked here — what makes it ready, what is blocking it, or what needs human attention).
 
-Priority rules (highest urgency first):
-1. NEEDS_REVIEW: unresolvable conflicts or LOW confidence — require immediate human attention.
-2. INCOMPLETE: missing documents or fields — may be unblocked by contacting the customer.
-3. COMPLETE: all data present and valid — lowest urgency, ready to finalize.
-Within each group: more issues = higher priority.""";
+Priority rules (first = process first):
+1. COMPLETE: all data present and valid — ready to finalize immediately, highest priority.
+2. INCOMPLETE: missing documents or fields — actionable once customer responds.
+3. NEEDS_REVIEW: unresolvable conflicts or LOW confidence — blocked, requires human escalation.
+Within each group: fewer issues = higher priority.""";
 
 def prioritize_claims(claim_results_json: str) -> str by llm();

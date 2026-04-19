@@ -1,6 +1,24 @@
-```json
 {
-  "processing_order": ["CLM-004", "CLM-003", "CLM-005", "CLM-002", "CLM-001"],
-  "rationale": "NEEDS_REVIEW claims (CLM-004, CLM-003, CLM-005) are prioritized first as they contain unresolvable conflicts or LOW confidence fields requiring immediate human attention. Within NEEDS_REVIEW: CLM-004 ranks highest with 3 issues (invalid VIN, missing/pending payout, LOW confidence payout field); CLM-003 ranks second with 2 issues (unresolvable VIN conflict across valid documents, duplicate settlement breakdown); CLM-005 ranks third with 2 issues (missing finance agreement, date-of-loss conflict between HIGH confidence sources, crossed-out officer name) — tied in issue count with CLM-003 but ranked lower as its conflicts are partially corroborated and more resolvable. INCOMPLETE claim CLM-002 follows with 4 logged issues but is awaiting a customer-retrievable document (police report), making it actionable without human review escalation. COMPLETE claim CLM-001 is last — all fields present and validated at HIGH confidence, ready to finalize with no blocking issues."
+  "processing_order": [
+    {
+      "claim_id": "CLM-001",
+      "reason": "All documents present, all fields extracted at HIGH confidence, and no issues \u2014 ready to finalize immediately."
+    },
+    {
+      "claim_id": "CLM-002",
+      "reason": "Missing only the police report, which the customer has acknowledged and committed to submitting \u2014 actionable once received."
+    },
+    {
+      "claim_id": "CLM-003",
+      "reason": "Blocked by an unresolved VIN conflict between the finance agreement and all other documents \u2014 requires a corrected finance agreement from Chase Auto before the claim can proceed."
+    },
+    {
+      "claim_id": "CLM-005",
+      "reason": "Blocked by a missing finance agreement and a material date-of-loss discrepancy between the settlement breakdown and police report \u2014 both require human review and document correction before finalizing."
+    },
+    {
+      "claim_id": "CLM-004",
+      "reason": "Blocked by an invalid VIN across all official documents, an unverified customer-supplied VIN, and a pending insurance payout with no finalized settlement amount \u2014 multiple unresolvable conflicts require human escalation."
+    }
+  ]
 }
-```

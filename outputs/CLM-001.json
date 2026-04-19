@@ -133,20 +133,6 @@
         "reason": ""
       },
       {
-        "key": "adjuster_name",
-        "value": "M. Chen",
-        "confidence": "HIGH",
-        "source": "adjuster_note.png",
-        "reason": ""
-      },
-      {
-        "key": "odometer_reading",
-        "value": "~47,200 mi",
-        "confidence": "LOW",
-        "source": "adjuster_note.png",
-        "reason": "Approximate reading; odometer display was cracked and hard to read exactly."
-      },
-      {
         "key": "account_number",
         "value": "4501-8827-3390",
         "confidence": "HIGH",
@@ -154,7 +140,7 @@
         "reason": ""
       },
       {
-        "key": "interest_rate_apr",
+        "key": "interest_rate",
         "value": "4.99%",
         "confidence": "HIGH",
         "source": "finance_agreement.png",
@@ -182,11 +168,25 @@
         "reason": ""
       },
       {
-        "key": "original_loan_amount",
-        "value": "$22,340.55",
-        "confidence": "HIGH",
-        "source": "finance_agreement.png",
-        "reason": ""
+        "key": "adjuster_name",
+        "value": "M. Chen",
+        "confidence": "MEDIUM",
+        "source": "adjuster_note.png",
+        "reason": "Extracted from handwritten adjuster note header; source is image with handwriting."
+      },
+      {
+        "key": "odometer_reading",
+        "value": "~47,200 mi",
+        "confidence": "LOW",
+        "source": "adjuster_note.png",
+        "reason": "Handwritten note states display was cracked and hard to read exactly \u2014 value is approximate."
+      },
+      {
+        "key": "inspection_location",
+        "value": "Murray's Tow Yard, 2847 Jackson Rd",
+        "confidence": "MEDIUM",
+        "source": "adjuster_note.png",
+        "reason": "Inspection location from handwritten adjuster notes, not the incident location."
       }
     ]
   },
@@ -248,28 +248,28 @@
     },
     {
       "tool": "detect_duplicates",
-      "input": "All 4 documents",
-      "result": "No duplicates detected across all 6 pairs (max similarity 13.5%)"
+      "input": "All 4 documents: police_report.pdf, settlement_breakdown.pdf, adjuster_note.png, finance_agreement.png",
+      "result": "No duplicates detected. All pairs similarity_pct < 15%."
     },
     {
       "tool": "extract_fields",
-      "input": "police_report.pdf (doc_type=1)",
-      "result": "VIN=1HGCM82633A004352 (HIGH), date_of_loss=02/14/2026 (HIGH), plus 10 additional facts"
+      "input": "doc_type=POLICE_REPORT, police_report.pdf",
+      "result": "vin=1HGCM82633A004352 (HIGH), date_of_loss=02/14/2026 (HIGH), insurance_payout=None, loan_balance=None; additional facts: car_year, car_make, car_model, incident_location, claimant_name, policy_number, report_number, officer_name, badge_number, total_loss_declared"
     },
     {
       "tool": "extract_fields",
-      "input": "settlement_breakdown.pdf (doc_type=3)",
-      "result": "VIN=1HGCM82633A004352 (HIGH), date_of_loss=02/14/2026 (HIGH), insurance_payout=$18,750.00 (HIGH), loan_balance=$22,340.55 (HIGH), plus 10 additional facts"
+      "input": "doc_type=SETTLEMENT_BREAKDOWN, settlement_breakdown.pdf",
+      "result": "vin=1HGCM82633A004352 (HIGH), date_of_loss=02/14/2026 (HIGH), insurance_payout=$18,750.00 (HIGH), loan_balance=$22,340.55 (HIGH); additional facts: claimant_name, policy_number, car_year, car_make, car_model, lender_name, total_loss_value, deductible, gap_amount, claim_reference, date_prepared"
     },
     {
       "tool": "extract_fields",
-      "input": "adjuster_note.png (doc_type=4)",
-      "result": "VIN=1HGCM82633A004352 (MEDIUM), loan_balance=about $22k (LOW), plus 10 additional facts"
+      "input": "doc_type=ADJUSTER_NOTE, adjuster_note.png",
+      "result": "vin=1HGCM82633A004352 (MEDIUM), date_of_loss=None, insurance_payout=None, loan_balance='about $22k' (LOW); additional facts: adjuster_name (MEDIUM), odometer_reading (LOW), inspection_location (MEDIUM)"
     },
     {
       "tool": "extract_fields",
-      "input": "finance_agreement.png (doc_type=2)",
-      "result": "VIN=1HGCM82633A004352 (HIGH), loan_balance=$22,340.55 (HIGH), plus 11 additional facts"
+      "input": "doc_type=FINANCE_AGREEMENT, finance_agreement.png",
+      "result": "vin=1HGCM82633A004352 (HIGH), date_of_loss=None, insurance_payout=None, loan_balance=$22,340.55 (HIGH); additional facts: claimant_name, account_number, car_year, car_make, car_model, lender_name, original_loan_amount, interest_rate, loan_term, monthly_payment, payment_status"
     },
     {
       "tool": "validate_vin",
@@ -278,23 +278,18 @@
     },
     {
       "tool": "reconcile_field",
-      "input": "VIN across 4 sources",
-      "result": "recommended=1HGCM82633A004352, source=police_report.pdf, confidence=HIGH, has_conflict=false"
+      "input": "VIN from 4 sources: police_report.pdf (HIGH), settlement_breakdown.pdf (HIGH), adjuster_note.png (MEDIUM), finance_agreement.png (HIGH)",
+      "result": "recommended_value=1HGCM82633A004352, chosen_source=police_report.pdf, confidence=HIGH, has_conflict=false \u2014 consistent across all 4 sources"
     },
     {
       "tool": "reconcile_field",
-      "input": "date_of_loss across 2 sources",
-      "result": "recommended=02/14/2026, source=police_report.pdf, confidence=HIGH, has_conflict=false"
+      "input": "date_of_loss from 2 sources: police_report.pdf (HIGH), settlement_breakdown.pdf (HIGH)",
+      "result": "recommended_value=02/14/2026, chosen_source=police_report.pdf, confidence=HIGH, has_conflict=false \u2014 consistent across both sources"
     },
     {
       "tool": "reconcile_field",
-      "input": "insurance_payout (single source)",
-      "result": "recommended=$18,750.00, source=settlement_breakdown.pdf, confidence=HIGH, has_conflict=false"
-    },
-    {
-      "tool": "reconcile_field",
-      "input": "loan_balance across 2 authoritative sources",
-      "result": "recommended=$22,340.55, source=finance_agreement.png, confidence=HIGH, has_conflict=false"
+      "input": "loan_balance from 2 sources: settlement_breakdown.pdf (HIGH), finance_agreement.png (HIGH)",
+      "result": "recommended_value=$22,340.55, chosen_source=finance_agreement.png, confidence=HIGH, has_conflict=false \u2014 consistent across both sources"
     }
   ]
 }

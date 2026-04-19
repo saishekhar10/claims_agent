@@ -1,3 +1,4 @@
 jaseci==0.14.0
 PyMuPDF==1.24.8
 anthropic>=0.25.0
+rich>=13.0.0

@@ -9,7 +9,6 @@ import from .types {
 import from byllm.lib { Image }
 import re;
 import json;
-import from difflib { SequenceMatcher }
 
 # ── LLM Tools ─────────────────────────────────────────────────────────────────
 
