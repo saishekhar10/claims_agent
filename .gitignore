@@ -9,5 +9,4 @@ venv/
 .jac/data/
 data/
 .claude/
-ai_usage/
 .dual-graph/
